@@ -29,7 +29,7 @@ public enum ForegroundServiceType implements SafeEnum {
     camera("camera"),
     /// Corresponds to [`ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE`](https://developer.android.com/reference/android/content/pm/ServiceInfo#FOREGROUND_SERVICE_TYPE_MICROPHONE).
     microphone("microphone");
-
+    remoteMessaging("remoteMessaging");
     private final String safeName;
     ForegroundServiceType(final String safeName){
         this.safeName = safeName.toLowerCase(Locale.ENGLISH);
@@ -46,6 +46,7 @@ public enum ForegroundServiceType implements SafeEnum {
             case mediaProjection:   return ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION;
             case microphone:        return ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE;
             case phoneCall:         return ServiceInfo.FOREGROUND_SERVICE_TYPE_PHONE_CALL;
+            case remoteMessaging:   return ServiceInfo.FOREGROUND_SERVICE_REMOTE_MESSAGING;
             case none:
             default:
                 return ServiceInfo.FOREGROUND_SERVICE_TYPE_NONE;
