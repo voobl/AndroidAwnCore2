@@ -46,7 +46,12 @@ public enum ForegroundServiceType implements SafeEnum {
             case mediaProjection:   return ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION;
             case microphone:        return ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE;
             case phoneCall:         return ServiceInfo.FOREGROUND_SERVICE_TYPE_PHONE_CALL;
-            case remoteMessaging:   return ServiceInfo.FOREGROUND_SERVICE_REMOTE_MESSAGING;
+             case remoteMessaging:
+            if (Build.VERSION.SDK_INT >= 34) {
+                return ServiceInfo.FOREGROUND_SERVICE_REMOTE_MESSAGING;
+            } else {
+                return ServiceInfo.FOREGROUND_SERVICE_TYPE_NONE;
+            }
             case none:
             default:
                 return ServiceInfo.FOREGROUND_SERVICE_TYPE_NONE;
