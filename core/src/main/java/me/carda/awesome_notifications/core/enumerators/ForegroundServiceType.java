@@ -28,7 +28,7 @@ public enum ForegroundServiceType implements SafeEnum {
     /// Corresponds to [`ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA`](https://developer.android.com/reference/android/content/pm/ServiceInfo#FOREGROUND_SERVICE_TYPE_CAMERA).
     camera("camera"),
     /// Corresponds to [`ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE`](https://developer.android.com/reference/android/content/pm/ServiceInfo#FOREGROUND_SERVICE_TYPE_MICROPHONE).
-    microphone("microphone");
+    microphone("microphone"),
     remoteMessaging("remoteMessaging");
     private final String safeName;
     ForegroundServiceType(final String safeName){
